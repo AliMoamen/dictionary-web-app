@@ -1,0 +1,21 @@
+@import "./utils/colors";
+.search-box {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  input {
+    width: 100%;
+    border: none;
+    caret-color: $purple;
+    outline-color: $purple;
+    padding: 15px 10px;
+    background-color: $light-grey;
+    border-radius: 10px;
+    font-weight: bold;
+  }
+  button {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+  }
+}

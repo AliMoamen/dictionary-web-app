@@ -1,0 +1,11 @@
+@import "./utils/colors";
+h4 {
+  color: $dark-grey;
+  font-weight: 200;
+}
+li {
+  margin-left: 30px;
+}
+li::marker {
+  color: $purple;
+}

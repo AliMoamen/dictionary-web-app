@@ -1,0 +1,17 @@
+@import "./utils/text";
+@import "./utils/colors";
+
+article {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  h1 {
+    @include heading-l;
+  }
+
+  p {
+    @include heading-m;
+    color: $purple;
+  }
+}

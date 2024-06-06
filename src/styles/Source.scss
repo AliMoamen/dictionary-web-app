@@ -1,0 +1,16 @@
+@import "./utils/colors";
+.source-box {
+  p {
+    color: $dark-grey;
+    text-decoration: underline;
+    a {
+      color: black;
+      img {
+        margin-left: 10px;
+      }
+    }
+    span {
+      margin-left: 15px;
+    }
+  }
+}

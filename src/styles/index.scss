@@ -1,0 +1,27 @@
+@import "./utils/fonts";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: $inter;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+.app {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 500px;
+  padding-top: 40px;
+}
+button {
+  border: none;
+  background: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
