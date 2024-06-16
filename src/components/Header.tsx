@@ -1,27 +1,36 @@
 import IMAGES from "./Images";
 import Switch from "./Switch";
+import Dropdown from "./Dropdown";
 import VerticalLine from "./VerticalLine";
 import "../styles/Header.scss";
-const Header = () => {
+
+type PropsType = {
+  font: string;
+  setFont: React.Dispatch<React.SetStateAction<string>>;
+  dropdown: boolean;
+  setDropdown: React.Dispatch<React.SetStateAction<boolean>>;
+};
+const Header = ({ font, setFont, dropdown, setDropdown }: PropsType) => {
+  const fontFamilies: { [key: string]: string } = {
+    inter: "Sans Serif",
+    lora: "Serif",
+    inconsolata: "Mono",
+  };
   return (
     <header>
       <img src={IMAGES.logo} alt="logo.svg" />
       <div>
-        <button>
-          <h3>Sans Serif</h3>
-          <img src={IMAGES.icon_arrow_down} alt="icon-arrow-down.svg" />
-          <div className="dropdown-menu">
-            <button>
-              <h3 style={{ fontFamily: "inter, Arial" }}>Sans Serif</h3>
-            </button>
-            <button>
-              <h3 style={{ fontFamily: "lora, Arial" }}>Serif</h3>
-            </button>
-            <button>
-              <h3 style={{ fontFamily: "inconsolata, Arial" }}>Mono</h3>
-            </button>
-          </div>
-        </button>
+        <div className="dropdown">
+          <button onClick={() => setDropdown(!dropdown)}>
+            <h3 style={{ fontFamily: `${font}, Arial` }}>
+              {fontFamilies[font]}
+            </h3>
+            <img src={IMAGES.icon_arrow_down} alt="icon-arrow-down.svg" />
+          </button>
+          {dropdown ? (
+            <Dropdown setFont={setFont} setDropdown={setDropdown} />
+          ) : null}
+        </div>
         <VerticalLine />
         <Switch />
         <img src={IMAGES.icon_moon} alt="icon-moon.svg" />
