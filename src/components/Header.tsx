@@ -2,6 +2,7 @@ import IMAGES from "./Images";
 import Switch from "./Switch";
 import Dropdown from "./Dropdown";
 import VerticalLine from "./VerticalLine";
+import { data } from "../api/fetchData";
 import "../styles/Header.scss";
 
 type PropsType = {
@@ -9,16 +10,37 @@ type PropsType = {
   setFont: React.Dispatch<React.SetStateAction<string>>;
   dropdown: boolean;
   setDropdown: React.Dispatch<React.SetStateAction<boolean>>;
+  setData: React.Dispatch<React.SetStateAction<data | null>>;
+  setWord: React.Dispatch<React.SetStateAction<string>>;
+  setError: React.Dispatch<React.SetStateAction<boolean>>;
+  setEmpty: React.Dispatch<React.SetStateAction<boolean>>;
 };
-const Header = ({ font, setFont, dropdown, setDropdown }: PropsType) => {
+const Header = ({
+  font,
+  setFont,
+  dropdown,
+  setDropdown,
+  setData,
+  setWord,
+  setError,
+  setEmpty,
+}: PropsType) => {
   const fontFamilies: { [key: string]: string } = {
     inter: "Sans Serif",
     lora: "Serif",
     inconsolata: "Mono",
   };
+  const handleHomepage = () => {
+    setData(null);
+    setWord("");
+    setError(false);
+    setEmpty(false);
+  };
   return (
     <header>
-      <img src={IMAGES.logo} alt="logo.svg" />
+      <button onClick={() => handleHomepage()}>
+        <img src={IMAGES.logo} alt="logo.svg" />
+      </button>
       <div>
         <div className="dropdown">
           <button onClick={() => setDropdown(!dropdown)}>

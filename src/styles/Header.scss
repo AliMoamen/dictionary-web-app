@@ -6,6 +6,10 @@ header {
   flex-direction: row;
   justify-content: space-between;
 
+  button {
+    cursor: pointer;
+  }
+
   div {
     display: flex;
     align-items: center;

@@ -1,0 +1,13 @@
+@import "./utils/colors";
+
+li {
+  margin-left: 30px;
+  margin-bottom: 20px;
+
+  span {
+    color: $dark-grey;
+  }
+}
+li::marker {
+  color: $purple;
+}

@@ -3,6 +3,7 @@
   position: relative;
   display: flex;
   flex-direction: row;
+  margin-bottom: 6px;
   input {
     width: 100%;
     border: none;
@@ -18,4 +19,8 @@
     right: 15px;
     top: 15px;
   }
+}
+.error-message {
+  color: $red;
+  font-size: 15px;
 }
