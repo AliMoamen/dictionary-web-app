@@ -7,7 +7,7 @@ const ListItem = ({
   example: string | undefined;
 }) => {
   return (
-    <li>
+    <li className="text">
       {content}
 
       {example ? (

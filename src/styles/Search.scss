@@ -9,11 +9,12 @@
     border: none;
     caret-color: $purple;
     outline-color: $purple;
+    box-shadow: none;
     padding: 15px 10px;
-    background-color: $light-grey;
     border-radius: 10px;
     font-weight: bold;
   }
+
   button {
     position: absolute;
     right: 15px;

@@ -11,6 +11,7 @@ import { fetchData } from "./api/fetchData";
 
 function App() {
   const [font, setFont] = useState(localStorage.getItem("font") || "inter");
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
   const [dropdown, setDropdown] = useState(false);
   const [word, setWord] = useState(localStorage.getItem("word") || "");
   const [data, setData] = useState<data | null>(
@@ -26,6 +27,10 @@ function App() {
       : false
   );
   const [empty, setEmpty] = useState<boolean>(false);
+
+  document.body.classList.remove(theme === "light" ? "dark" : "light");
+  document.body.classList.add(theme);
+  localStorage.setItem("theme", theme);
 
   const handleSearch = async (word: string) => {
     localStorage.setItem("word", word);
@@ -54,6 +59,8 @@ function App() {
       <Header
         font={font}
         setFont={setFont}
+        theme={theme}
+        setTheme={setTheme}
         dropdown={dropdown}
         setDropdown={setDropdown}
         setData={setData}

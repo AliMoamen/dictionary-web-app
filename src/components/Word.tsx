@@ -20,7 +20,7 @@ const Word = ({ data }: PropsType) => {
   return (
     <article>
       <div>
-        <h1>{data.word}</h1>
+        <h1 className="text">{data.word}</h1>
         <p>{data.phonetic}</p>
       </div>
       {data.audio ? (

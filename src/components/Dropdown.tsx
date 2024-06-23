@@ -11,15 +11,24 @@ const Dropdown = ({ setFont, setDropdown }: PropsType) => {
   };
 
   return (
-    <div className="dropdown-menu">
+    <div className="dropdown-menu theme-dropdown">
       <button onClick={() => handleChangeFont("inter")}>
-        <h3 style={{ fontFamily: "inter, Arial" }}>Sans Serif</h3>
+        <h3 className="text-dropdown" style={{ fontFamily: "inter, Arial" }}>
+          Sans Serif
+        </h3>
       </button>
       <button onClick={() => handleChangeFont("lora")}>
-        <h3 style={{ fontFamily: "lora, Arial" }}>Serif</h3>
+        <h3 className="text-dropdown" style={{ fontFamily: "lora, Arial" }}>
+          Serif
+        </h3>
       </button>
       <button onClick={() => handleChangeFont("inconsolata")}>
-        <h3 style={{ fontFamily: "inconsolata, Arial" }}>Mono</h3>
+        <h3
+          className="text-dropdown"
+          style={{ fontFamily: "inconsolata, Arial" }}
+        >
+          Mono
+        </h3>
       </button>
     </div>
   );

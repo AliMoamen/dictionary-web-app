@@ -1,0 +1,50 @@
+@import "./colors";
+
+.light {
+  background-color: white;
+  .text,
+  .text-dropdown {
+    color: black;
+  }
+
+  .text-dropdown:hover {
+    color: $purple;
+  }
+
+  .search {
+    background-color: $light-grey;
+  }
+
+  .theme-dropdown {
+    background-color: white;
+    box-shadow: 1px 1px 6px rgba($color: #000000, $alpha: 0.5);
+  }
+
+  .horizontal-line {
+    background-color: $grey;
+  }
+}
+.dark {
+  background-color: black;
+  .text,
+  .text-dropdown {
+    color: white;
+  }
+
+  .text-dropdown:hover {
+    color: $purple;
+  }
+
+  .button-dropdown {
+    background-color: black;
+  }
+  .search,
+  .theme-dropdown,
+  .horizontal-line {
+    background-color: $light-black;
+  }
+
+  .theme-dropdown:hover {
+    box-shadow: 1px 1px 15px rgba($color: $purple, $alpha: 1);
+  }
+}

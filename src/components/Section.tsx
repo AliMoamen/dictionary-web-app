@@ -24,7 +24,7 @@ const Section = ({ sectionName, data, handleSearch, setWord }: Propstype) => {
   return (
     <>
       <div className="section">
-        <h3>
+        <h3 className="text">
           <i>{sectionName}</i>
         </h3>
         <HorizontalLine />

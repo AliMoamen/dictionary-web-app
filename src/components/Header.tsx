@@ -8,6 +8,8 @@ import "../styles/Header.scss";
 type PropsType = {
   font: string;
   setFont: React.Dispatch<React.SetStateAction<string>>;
+  theme: string;
+  setTheme: React.Dispatch<React.SetStateAction<string>>;
   dropdown: boolean;
   setDropdown: React.Dispatch<React.SetStateAction<boolean>>;
   setData: React.Dispatch<React.SetStateAction<data | null>>;
@@ -18,6 +20,8 @@ type PropsType = {
 const Header = ({
   font,
   setFont,
+  theme,
+  setTheme,
   dropdown,
   setDropdown,
   setData,
@@ -46,7 +50,7 @@ const Header = ({
       <div>
         <div className="dropdown">
           <button onClick={() => setDropdown(!dropdown)}>
-            <h3 style={{ fontFamily: `${font}, Arial` }}>
+            <h3 className="text" style={{ fontFamily: `${font}, Arial` }}>
               {fontFamilies[font]}
             </h3>
             <img src={IMAGES.icon_arrow_down} alt="icon-arrow-down.svg" />
@@ -56,8 +60,11 @@ const Header = ({
           ) : null}
         </div>
         <VerticalLine />
-        <Switch />
-        <img src={IMAGES.icon_moon} alt="icon-moon.svg" />
+        <Switch theme={theme} setTheme={setTheme} />
+        <img
+          src={theme == "light" ? IMAGES.icon_moon : IMAGES.icon_moon_dark}
+          alt="icon-moon.svg"
+        />
       </div>
     </header>
   );

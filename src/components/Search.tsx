@@ -14,6 +14,7 @@ const Search = ({ font, word, empty, setWord, handleSearch }: PropsType) => {
       <div>
         <div className="search-box">
           <input
+            className="search text"
             style={
               empty
                 ? { fontFamily: font, outlineColor: "#ff5252" }

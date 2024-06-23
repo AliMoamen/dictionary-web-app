@@ -11,7 +11,7 @@ const Source = ({ data }: PropsType) => {
         <p>
           Source
           <span>
-            <a target="_blank" href={data.sources[0]}>
+            <a className="text" target="_blank" href={data.sources[0]}>
               {data.sources[0]}
               <img src={IMAGES.icon_new_window} alt="" />
             </a>
