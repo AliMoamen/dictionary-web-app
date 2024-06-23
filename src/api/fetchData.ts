@@ -39,6 +39,7 @@ export const fetchData = async (word: string) => {
   const parsedResponse: fetchedData[] = await response.json();
 
   if (!parsedResponse.length) {
+    console.clear();
     return null;
   }
 

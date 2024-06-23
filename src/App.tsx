@@ -12,19 +12,34 @@ import { fetchData } from "./api/fetchData";
 function App() {
   const [font, setFont] = useState(localStorage.getItem("font") || "inter");
   const [dropdown, setDropdown] = useState(false);
-  const [word, setWord] = useState("");
-  const [data, setData] = useState<data | null>(null);
-  const [error, setError] = useState<boolean>(false);
+  const [word, setWord] = useState(localStorage.getItem("word") || "");
+  const [data, setData] = useState<data | null>(
+    localStorage.getItem("data")
+      ? JSON.parse(localStorage.getItem("data") as string)
+      : null
+  );
+  const [error, setError] = useState<boolean>(
+    localStorage.getItem("error")
+      ? localStorage.getItem("error") === "true"
+        ? true
+        : false
+      : false
+  );
   const [empty, setEmpty] = useState<boolean>(false);
+
   const handleSearch = async (word: string) => {
+    localStorage.setItem("word", word);
     if (!word.replace(/\s/g, "")) {
       setEmpty(true);
     } else {
       setEmpty(false);
       const data = await fetchData(word);
+      localStorage.setItem("data", JSON.stringify(data));
       if (!data) {
         setError(true);
+        localStorage.setItem("error", "true");
       } else {
+        localStorage.setItem("error", "false");
         setData(data);
         setError(false);
       }

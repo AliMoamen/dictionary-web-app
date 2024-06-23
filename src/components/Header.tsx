@@ -35,6 +35,8 @@ const Header = ({
     setWord("");
     setError(false);
     setEmpty(false);
+    localStorage.setItem("word", "");
+    localStorage.setItem("data", "null");
   };
   return (
     <header>

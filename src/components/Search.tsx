@@ -21,7 +21,10 @@ const Search = ({ font, word, empty, setWord, handleSearch }: PropsType) => {
             }
             autoFocus
             value={word}
-            onChange={(e) => setWord(e.target.value)}
+            onChange={(e) => {
+              setWord(e.target.value);
+              localStorage.setItem("word", e.target.value);
+            }}
             onKeyDown={(e) => (e.key === "Enter" ? handleSearch(word) : null)}
             type="text"
             placeholder="Search any word"
