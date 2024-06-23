@@ -8,11 +8,15 @@
     width: 100%;
     border: none;
     caret-color: $purple;
-    outline-color: $purple;
+    outline: none;
     box-shadow: none;
     padding: 15px 10px;
     border-radius: 10px;
     font-weight: bold;
+  }
+
+  input:focus {
+    outline: 2px solid $purple;
   }
 
   button {

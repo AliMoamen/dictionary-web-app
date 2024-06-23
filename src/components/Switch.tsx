@@ -8,24 +8,14 @@ const Switch = ({ theme, setTheme }: PropsType) => {
   document.querySelector(".js-toggle-theme")?.setAttribute("checked", checked);
   return (
     <label className="switch">
-      {theme === "dark" ? (
-        <input
-          className="js-toggle-theme"
-          onClick={() => {
-            setTheme("light");
-          }}
-          type="checkbox"
-          checked
-        />
-      ) : (
-        <input
-          className="js-toggle-theme"
-          onClick={() => {
-            setTheme("dark");
-          }}
-          type="checkbox"
-        />
-      )}
+      <input
+        className="js-toggle-theme"
+        onChange={() => {
+          setTheme(theme === "dark" ? "light" : "dark");
+        }}
+        type="checkbox"
+        checked={theme === "dark"}
+      />
 
       <span className="slider round"></span>
     </label>

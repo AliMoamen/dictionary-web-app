@@ -15,7 +15,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  width: 500px;
+  width: 600px;
   padding: 40px 0;
 }
 button {
@@ -24,5 +24,14 @@ button {
 
   &:hover {
     cursor: pointer;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    box-sizing: border-box;
+  }
+  .app {
+    width: 95vw;
   }
 }
