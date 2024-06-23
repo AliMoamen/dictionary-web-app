@@ -1,7 +1,7 @@
 import IMAGES from "./Images";
 import "../styles/Word.scss";
 import { data } from "../api/fetchData";
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 type PropsType = {
   data: data;
